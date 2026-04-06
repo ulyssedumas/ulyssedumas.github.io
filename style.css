@@ -1,13 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
 
 :root {
-    /* Palette extraite de ta photo de profil */
-    --bg-dark: #222340;      /* Bleu nuit foncé - Fond principal */
-    --bg-card: #313359;      /* Bleu marine - Cartes et Navigation */
-    --text-main: #F2E6D8;    /* Beige clair - Texte principal */
-    --text-muted: #A69992;   /* Taupe - Texte secondaire */
-    --accent: #ABA8BF;       /* Gris lavande - Boutons et bordures */
-    --accent-hover: #F2E6D8; /* Beige clair pour les survols (hover) */
+    /* Ta palette de couleurs sur mesure */
+    --bg-dark: #222340;      
+    --bg-card: #313359;      
+    --text-main: #F2E6D8;    
+    --text-muted: #A69992;   
+    --accent: #ABA8BF;       
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -59,7 +58,7 @@ nav {
     display: inline-block;
     padding: 0.8rem 2rem;
     background-color: var(--accent);
-    color: var(--bg-dark); /* Texte sombre sur bouton clair pour le contraste */
+    color: var(--bg-dark); /* Texte sombre sur fond clair pour bien lire */
     text-decoration: none;
     border-radius: 4px;
     font-weight: 700;
@@ -82,7 +81,10 @@ nav {
     border-top: 3px solid transparent;
     transition: 0.3s;
 }
-.card:hover { border-top: 3px solid var(--accent); transform: translateY(-5px); }
+.card:hover { 
+    border-top: 3px solid var(--accent); 
+    transform: translateY(-5px); 
+}
 .card h3 { color: var(--accent); margin-bottom: 0.5rem; }
 
 /* Images */
