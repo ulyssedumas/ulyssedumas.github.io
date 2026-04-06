@@ -1,12 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
 
 :root {
-    --bg-dark: #121212; /* Noir profond */
-    --bg-card: #1E1E1E; /* Gris anthracite */
-    --text-main: #F5F5F5; /* Blanc cassé pour ne pas fatiguer les yeux */
-    --text-muted: #A0A0A0; /* Gris clair */
-    --esiee-red: #D31245; /* Rouge ESIEE Paris */
-    --esiee-red-hover: #A30D35;
+    /* Palette extraite de ta photo de profil */
+    --bg-dark: #222340;      /* Bleu nuit foncé - Fond principal */
+    --bg-card: #313359;      /* Bleu marine - Cartes et Navigation */
+    --text-main: #F2E6D8;    /* Beige clair - Texte principal */
+    --text-muted: #A69992;   /* Taupe - Texte secondaire */
+    --accent: #ABA8BF;       /* Gris lavande - Boutons et bordures */
+    --accent-hover: #F2E6D8; /* Beige clair pour les survols (hover) */
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -25,11 +26,11 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 3px solid var(--esiee-red);
+    border-bottom: 3px solid var(--accent);
 }
 
 .logo { font-size: 1.5rem; font-weight: 700; color: var(--text-main); }
-.logo span { color: var(--esiee-red); }
+.logo span { color: var(--accent); }
 
 .nav-links a {
     color: var(--text-main);
@@ -40,26 +41,37 @@ nav {
 }
 
 .nav-links a:hover, .nav-links a.active {
-    color: var(--esiee-red);
+    color: var(--accent);
 }
 
 /* Structure Générale */
 .container { padding: 4rem 10%; }
-.title { font-size: 2.5rem; color: var(--text-main); margin-bottom: 2rem; border-left: 5px solid var(--esiee-red); padding-left: 15px; }
+.title { 
+    font-size: 2.5rem; 
+    color: var(--text-main); 
+    margin-bottom: 2rem; 
+    border-left: 5px solid var(--accent); 
+    padding-left: 15px; 
+}
 
 /* Boutons */
 .btn {
     display: inline-block;
     padding: 0.8rem 2rem;
-    background-color: var(--esiee-red);
-    color: white;
+    background-color: var(--accent);
+    color: var(--bg-dark); /* Texte sombre sur bouton clair pour le contraste */
     text-decoration: none;
     border-radius: 4px;
-    font-weight: 600;
+    font-weight: 700;
     transition: 0.3s;
     margin-top: 1rem;
+    border: 2px solid var(--accent);
 }
-.btn:hover { background-color: var(--esiee-red-hover); transform: translateY(-2px); }
+.btn:hover { 
+    background-color: transparent; 
+    color: var(--accent);
+    transform: translateY(-2px); 
+}
 
 /* Cartes (Expériences, Passions) */
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
@@ -70,10 +82,16 @@ nav {
     border-top: 3px solid transparent;
     transition: 0.3s;
 }
-.card:hover { border-top: 3px solid var(--esiee-red); transform: translateY(-5px); }
-.card h3 { color: var(--esiee-red); margin-bottom: 0.5rem; }
+.card:hover { border-top: 3px solid var(--accent); transform: translateY(-5px); }
+.card h3 { color: var(--accent); margin-bottom: 0.5rem; }
 
-/* Images (Passions) */
+/* Images */
 .photo-portfolio { width: 100%; border-radius: 8px; margin-top: 1rem; object-fit: cover; }
 
-footer { text-align: center; padding: 2rem; background-color: var(--bg-card); margin-top: 3rem; color: var(--text-muted); }
+footer { 
+    text-align: center; 
+    padding: 2rem; 
+    background-color: var(--bg-card); 
+    margin-top: 3rem; 
+    color: var(--text-muted); 
+}
