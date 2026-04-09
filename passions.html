@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ulysse Dumas | Passions & Culture</title>
+    <title>Ulysse Dumas | Passions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -17,27 +18,74 @@
         </div>
     </nav>
 
-    <div class="container">
-        <h1 class="title">Passions & Culture</h1>
-        <div class="grid">
-            <div class="card">
-                <h3>Photographie</h3>
-                <p>Création de contenu visuel artistique (+1000 clichés). Expertise Adobe Lightroom & Photoshop.</p>
-                </div>
-            <div class="card">
-                <h3>Sports</h3>
-                <p>Judo (ceinture bleue), Tennis (14 ans), Cyclisme et Natation. Des sports qui forgent le mental.</p>
-            </div>
-            <div class="card">
-                <h3>Engagements</h3>
-                <p>Scoutisme (travail d'équipe), BIA (Aéronautique) et Cadets de la Gendarmerie (Réserviste civique).</p>
+    <section class="passion-section">
+        <div class="parallax-bg" style="background-image: url('images/image1.jpg');"></div>
+        
+        <div class="passion-content hidden-left">
+            <h2><i class="fa-solid fa-camera-retro"></i> Photographie</h2>
+            <p class="thin-text">L'art de capturer l'instant et de composer la lumière.</p>
+            <p>Réalisation de plus de 1000 clichés artistiques. La photographie m'a appris la patience, l'œil du détail et la maîtrise d'outils complexes comme Adobe Lightroom et Photoshop.</p>
+        </div>
+
+        <div class="passion-visual hidden-right">
+            <div class="photo-grid">
+                <img src="images/image1.jpg" alt="Photo 1">
+                <img src="images/image2.jpg" alt="Photo 2">
+                <img src="images/image3.jpg" alt="Photo 3">
+                <img src="images/image4.jpg" alt="Photo 4">
+                <img src="images/image5.jpg" alt="Photo 5">
+                <img src="images/image6.jpg" alt="Photo 6">
             </div>
         </div>
-    </div>
+    </section>
+
+    <section class="passion-section">
+        <div class="parallax-bg" style="background-image: url('images/image2.jpg');"></div>
+        
+        <div class="passion-content hidden-right">
+            <h2><i class="fa-solid fa-dumbbell"></i> Sports & Dépassement</h2>
+            <p class="thin-text">Mens sana in corpore sano.</p>
+            <p>La pratique assidue du sport forge la résilience et l'esprit de décision. Je pratique le <strong>Judo (Ceinture bleue)</strong>, le <strong>Tennis (14 ans)</strong>, ainsi que le cyclisme sur route et la natation.</p>
+        </div>
+
+        <div class="passion-visual hidden-left">
+            <i class="fa-solid fa-medal" style="font-size: 8rem; color: var(--icon-color);"></i>
+        </div>
+    </section>
+
+    <section class="passion-section">
+        <div class="parallax-bg" style="background-image: url('images/image3.jpg');"></div>
+        
+        <div class="passion-content hidden-left">
+            <h2><i class="fa-solid fa-plane-departure"></i> Engagements & Aéro</h2>
+            <p class="thin-text">Servir, apprendre et s'élever.</p>
+            <p>J'ai obtenu mon <strong>BIA (Brevet d'Initiation Aéronautique)</strong> avec de solides connaissances en météorologie et principes de vol.</p>
+            <p>Mon parcours est aussi marqué par l'engagement collectif : Scoutisme (3 ans), Service National Universel, et Réserviste civique via le Brevet des Cadets de la Gendarmerie Nationale.</p>
+        </div>
+
+        <div class="passion-visual hidden-right">
+            <i class="fa-solid fa-handshake-angle" style="font-size: 8rem; color: var(--accent);"></i>
+        </div>
+    </section>
 
     <footer>
         <p>&copy; 2026 Ulysse Dumas - ESIEE Paris</p>
     </footer>
+
+    <script>
+        // Ce script observe les éléments et ajoute la classe "show" quand ils apparaissent à l'écran
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        });
+
+        // On applique l'observateur aux éléments venant de gauche et de droite
+        const hiddenElements = document.querySelectorAll('.hidden-left, .hidden-right');
+        hiddenElements.forEach((el) => observer.observe(el));
+    </script>
 
 </body>
 </html>
