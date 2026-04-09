@@ -2,47 +2,40 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
 
 :root {
-    --bg-dark: #161B33;      /* Fond principal */
-    --text-main: #DFF2F2;    /* Texte clair */
-    --accent: #6EC0E4;       /* Accents (boutons, bordures, cyan) */
-    --icon-color: #F04E9D;   /* Icônes et éléments punchy (rose) */
-    --hover-preview: #F8F9FA;/* Aperçus (blanc) */
+    --bg-main: #DFF2F2;      /* Fond très clair */
+    --text-main: #161B33;    /* Texte bleu nuit */
+    --accent: #9FC0E4;       /* Accent bleu ciel */
+    --icon-color: #F04E9D;   /* Touche de rose pour les icônes */
+    --card-bg: rgba(255, 255, 255, 0.6);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
     font-family: 'Montserrat', sans-serif;
-    background-color: var(--bg-dark);
+    background-color: var(--bg-main);
     color: var(--text-main);
     line-height: 1.8;
     overflow-x: hidden;
 }
 
-/* Typographie */
-h1, h2, h3 {
-    font-family: "mundial-narrow-variable", "Montserrat", sans-serif;
-    font-variation-settings: "wght" 600;
-}
-
-/* Navigation Menu avec effet Glassmorphism (Flou) */
+/* Navigation */
 nav {
-    background: rgba(22, 27, 51, 0.7); 
+    background: rgba(223, 242, 242, 0.8); 
     padding: 1.2rem 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid rgba(110, 192, 228, 0.3);
+    border-bottom: 2px solid var(--accent);
     position: sticky; top: 0; z-index: 1000;
-    backdrop-filter: blur(15px); /* Effet de flou sur le fond */
+    backdrop-filter: blur(15px);
 }
 
 .logo { 
     font-size: 1.8rem; 
     color: var(--text-main); 
-    text-decoration: none; /* Logo cliquable sans soulignement */
+    text-decoration: none;
     font-weight: 700;
-    font-family: "mundial-narrow-variable", sans-serif;
 }
 .logo span { color: var(--accent); }
 
@@ -51,117 +44,70 @@ nav {
     text-decoration: none;
     margin-left: 2rem;
     font-weight: 600;
-    transition: color 0.3s ease, text-shadow 0.3s ease;
+    transition: 0.3s;
 }
+.nav-links a:hover, .nav-links a.active { color: var(--icon-color); }
 
-.nav-links a:hover, .nav-links a.active {
-    color: var(--hover-preview);
-    text-shadow: 0 0 10px var(--accent); /* Effet néon léger */
-}
-
-/* Structure Générale */
+/* Contenu */
 .container { padding: 5rem 10%; }
 .title { 
     font-size: 2.5rem; 
-    color: var(--accent); 
+    color: var(--text-main); 
     margin-bottom: 2rem; 
     border-left: 5px solid var(--icon-color); 
     padding-left: 15px; 
 }
-p { text-align: justify; margin-bottom: 1rem; } /* Alignement parfait du texte */
-
-/* Liens dans le texte */
-.text-link {
-    color: var(--accent);
-    text-decoration: none;
-    font-weight: 600;
-    transition: 0.3s;
-}
-.text-link:hover { color: var(--icon-color); }
+p { text-align: justify; margin-bottom: 1.5rem; }
 
 /* Boutons */
 .btn {
     display: inline-flex; align-items: center; gap: 10px;
     padding: 0.8rem 2rem;
-    background-color: transparent;
-    color: var(--accent);
+    background-color: var(--accent);
+    color: var(--text-main);
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 30px;
     font-weight: 700;
     transition: 0.3s;
-    margin-top: 1rem;
-    border: 2px solid var(--accent);
-    box-shadow: 0 0 15px rgba(110, 192, 228, 0.1);
+    border: none;
 }
-.btn:hover { 
-    background-color: var(--accent); 
-    color: var(--bg-dark);
-    box-shadow: 0 0 20px rgba(110, 192, 228, 0.5);
-    transform: translateY(-2px); 
-}
+.btn:hover { background-color: var(--text-main); color: #fff; transform: scale(1.05); }
 
-/* Cartes avec Glassmorphism */
+/* Cartes */
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
 .card {
-    background: rgba(255, 255, 255, 0.03); /* Fond très transparent */
-    backdrop-filter: blur(10px); /* Flou derrière la carte */
+    background: var(--card-bg);
     padding: 2.5rem;
-    border-radius: 12px;
-    border: 1px solid rgba(223, 242, 242, 0.1);
-    transition: all 0.4s ease;
+    border-radius: 15px;
+    border: 1px solid rgba(159, 192, 228, 0.4);
+    transition: 0.4s;
 }
-.card:hover { 
-    border-color: var(--icon-color); 
-    transform: translateY(-10px); 
-    box-shadow: 0 15px 30px rgba(240, 78, 157, 0.1);
-}
-.card h3 { color: var(--accent); margin-bottom: 1rem; font-size: 1.5rem; display: flex; align-items: center; gap: 10px; }
-.card i { color: var(--icon-color); }
+.card:hover { transform: translateY(-10px); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+.card i { color: var(--icon-color); font-size: 1.5rem; }
 
-/* --- ANIMATIONS : Machine à écrire --- */
-.typewriter h1 {
-    overflow: hidden;
-    border-right: .15em solid var(--icon-color);
-    white-space: nowrap;
-    margin: 0 auto;
-    letter-spacing: .05em;
-    animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
-}
-@keyframes typing { from { width: 0 } to { width: 100% } }
-@keyframes blink-caret { from, to { border-color: transparent } 50% { border-color: var(--icon-color); } }
+/* Animations Scroll */
+.reveal-blur { opacity: 0; filter: blur(10px); transform: translateY(30px); transition: 1s; }
+.show { opacity: 1; filter: blur(0); transform: translateY(0); }
 
-/* --- ANIMATIONS : Défilement (Flou, Glissement) --- */
-.reveal-blur { opacity: 0; filter: blur(20px); transform: translateY(30px); transition: all 1s ease-out; }
-.hidden-left { opacity: 0; filter: blur(10px); transform: translateX(-100px); transition: all 1s ease-out; }
-.hidden-right { opacity: 0; filter: blur(10px); transform: translateX(100px); transition: all 1s ease-out; }
-.show { opacity: 1; filter: blur(0); transform: translate(0, 0); }
-
-/* --- PARALLAX ET PASSIONS --- */
-.passion-section {
-    position: relative; min-height: 80vh; padding: 6rem 10%;
-    display: flex; align-items: center; justify-content: space-between; gap: 4rem;
+/* Galerie et Modal (Agrandissement) */
+.photo-grid img {
+    width: 100%; height: 150px; object-fit: cover; border-radius: 10px;
+    cursor: pointer; transition: 0.3s;
 }
-.passion-section:nth-child(even) { flex-direction: row-reverse; }
+.photo-grid img:hover { transform: scale(1.03); }
+
+/* MODAL STYLES */
+#imageModal {
+    display: none; position: fixed; z-index: 2000; top: 0; left: 0;
+    width: 100%; height: 100%; background: rgba(22, 27, 51, 0.9);
+    justify-content: center; align-items: center; cursor: pointer;
+}
+#modalImg { max-width: 90%; max-height: 80%; border-radius: 10px; border: 5px solid white; }
+.close-modal { position: absolute; top: 20px; right: 30px; color: white; font-size: 40px; font-weight: bold; }
+
+/* Parallax */
+.passion-section { position: relative; padding: 6rem 10%; display: flex; align-items: center; gap: 4rem; }
 .parallax-bg {
     position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-    background-size: cover; background-position: center; background-attachment: fixed;
-    opacity: 0.08; z-index: -1;
-}
-.passion-content { flex: 1; z-index: 2; }
-.passion-visual { flex: 1; z-index: 2; text-align: center; }
-
-/* Grille Photos */
-.photo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 15px; }
-.photo-grid img {
-    width: 100%; height: 150px; object-fit: cover; border-radius: 8px;
-    transition: all 0.4s ease; filter: grayscale(50%);
-}
-.photo-grid img:hover {
-    transform: scale(1.1) rotate(2deg); filter: grayscale(0%); z-index: 10; position: relative;
-    box-shadow: 0 10px 20px rgba(110, 192, 228, 0.4);
-}
-
-footer { 
-    text-align: center; padding: 2rem; border-top: 1px solid rgba(110, 192, 228, 0.2); 
-    color: var(--text-main); font-size: 0.9rem; margin-top: 3rem;
+    background-attachment: fixed; background-size: cover; opacity: 0.15; z-index: -1;
 }

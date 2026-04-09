@@ -17,70 +17,39 @@
         </div>
     </nav>
 
+    <div id="imageModal" onclick="this.style.display='none'">
+        <span class="close-modal">&times;</span>
+        <img id="modalImg">
+    </div>
+
     <section class="passion-section">
         <div class="parallax-bg" style="background-image: url('images/image1.jpg');"></div>
-        
-        <div class="passion-content hidden-left">
-            <h2><i class="fa-solid fa-camera-retro"></i> Art & Photographie</h2>
-            <p>La photographie est pour moi un moyen d'expression technique et artistique. J'ai réalisé et post-traité <strong>plus de 1000 photos artistiques</strong>, publiées sur un compte Instagram dédié et un site internet.</p>
-            <p>Cette passion m'a permis de maîtriser des outils professionnels comme Adobe Lightroom et de développer mon sens de l'esthétisme, utile aujourd'hui pour l'UI/UX design.</p>
-        </div>
-
-        <div class="passion-visual hidden-right">
+        <div class="passion-content reveal-blur">
+            <h1 class="title">Art & Photographie</h1>
+            <p>Cliquez sur les photos pour les agrandir au format adapté.</p>
             <div class="photo-grid">
-                <img src="images/image1.jpg" alt="Photo 1">
-                <img src="images/image2.jpg" alt="Photo 2">
-                <img src="images/image3.jpg" alt="Photo 3">
-                <img src="images/image4.jpg" alt="Photo 4">
-                <img src="images/image5.jpg" alt="Photo 5">
-                <img src="images/image6.jpg" alt="Photo 6">
+                <img src="images/image1.jpg" onclick="openModal(this.src)">
+                <img src="images/image2.jpg" onclick="openModal(this.src)">
+                <img src="images/image3.jpg" onclick="openModal(this.src)">
+                <img src="images/image4.jpg" onclick="openModal(this.src)">
+                <img src="images/image5.jpg" onclick="openModal(this.src)">
+                <img src="images/image6.jpg" onclick="openModal(this.src)">
             </div>
         </div>
     </section>
 
-    <section class="passion-section">
-        <div class="parallax-bg" style="background-image: url('images/image2.jpg');"></div>
-        
-        <div class="passion-content hidden-right">
-            <h2><i class="fa-solid fa-dumbbell"></i> Sports & Résilience</h2>
-            <p>Le sport fait partie intégrante de mon équilibre de vie, m'apportant persévérance et maîtrise de soi :</p>
-            <ul style="margin-left: 20px; margin-bottom: 15px; color: var(--hover-preview);">
-                <li><strong>Judo :</strong> Ceinture bleue. L'apprentissage du respect et du contrôle.</li>
-                <li><strong>Tennis :</strong> 14 années de pratique régulière.</li>
-                <li><strong>Natation :</strong> 6 ans de pratique.</li>
-                <li><strong>Autres :</strong> Cyclisme sur route, Krav Maga et Pêche Sportive.</li>
-            </ul>
-        </div>
-
-        <div class="passion-visual hidden-left">
-            <i class="fa-solid fa-medal" style="font-size: 10rem; color: var(--icon-color); text-shadow: 0 0 30px rgba(240, 78, 157, 0.4);"></i>
-        </div>
-    </section>
-
-    <section class="passion-section">
-        <div class="parallax-bg" style="background-image: url('images/image3.jpg');"></div>
-        
-        <div class="passion-content hidden-left">
-            <h2><i class="fa-solid fa-shield-halved"></i> Engagements & Citoyenneté</h2>
-            <p><strong>Brevet des Cadets de la Gendarmerie (Hérault) :</strong> Statut de réserviste civique. J'y ai développé un sens aigu de l'engagement, de l'autorité et de la responsabilité.</p>
-            <p><strong>Scoutisme (3 ans) :</strong> Eclaireurs et Eclaireuses de France. Apprentissage de la survie, de la navigation et du travail d'équipe en milieu naturel.</p>
-            <p><strong>BIA (Aéronautique) :</strong> Validation de connaissances techniques poussées en météorologie, principes de vol, sécurité et navigabilité.</p>
-            <p><strong>Certifications :</strong> SNU (Service National Universel) et PSC1 (Premiers secours).</p>
-        </div>
-
-        <div class="passion-visual hidden-right">
-            <i class="fa-solid fa-plane-up" style="font-size: 8rem; color: var(--accent); margin-bottom: 20px;"></i>
-            <i class="fa-solid fa-hand-holding-heart" style="font-size: 8rem; color: var(--hover-preview); margin-left: 20px;"></i>
-        </div>
-    </section>
-
-    <footer><p>&copy; 2026 Ulysse Dumas</p></footer>
-
     <script>
+        // Fonction pour ouvrir la photo en grand
+        function openModal(src) {
+            document.getElementById('imageModal').style.display = 'flex';
+            document.getElementById('modalImg').src = src;
+        }
+
+        // Animation au défilement
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => { if (entry.isIntersecting) entry.target.classList.add('show'); });
         });
-        document.querySelectorAll('.reveal-blur, .hidden-left, .hidden-right').forEach((el) => observer.observe(el));
+        document.querySelectorAll('.reveal-blur').forEach((el) => observer.observe(el));
     </script>
 </body>
 </html>
