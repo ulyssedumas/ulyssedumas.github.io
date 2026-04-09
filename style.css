@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
 
 :root {
-    /* Ta palette de couleurs sur mesure */
-    --bg-dark: #222340;      
-    --bg-card: #313359;      
-    --text-main: #F2E6D8;    
-    --text-muted: #A69992;   
-    --accent: #ABA8BF;       
+    /* Nouvelle palette de couleurs */
+    --bg-dark: #161B33;      /* Fond principal */
+    --text-main: #DFF2F2;    /* Texte clair */
+    --accent: #6EC0E4;       /* Accents (boutons, bordures) */
+    --icon-color: #F04E9D;   /* Icônes et éléments punchy */
+    --hover-preview: #F8F9FA;/* Aperçus d'interactions / survols */
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -16,19 +16,34 @@ body {
     background-color: var(--bg-dark);
     color: var(--text-main);
     line-height: 1.6;
+    overflow-x: hidden; /* Empêche la barre de défilement horizontale pendant l'animation */
+}
+
+/* Typographie variée */
+h1, h2, h3, .logo {
+    font-family: "mundial-narrow-variable", "Montserrat", sans-serif;
+    font-variation-settings: "wght" 600;
+}
+
+.thin-text {
+    font-family: "mundial-narrow-variable", sans-serif;
+    font-variation-settings: "wght" 100;
+    letter-spacing: 1px;
 }
 
 /* Navigation Menu */
 nav {
-    background-color: var(--bg-card);
+    background-color: rgba(22, 27, 51, 0.9); /* Fond semi-transparent */
     padding: 1.2rem 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 3px solid var(--accent);
+    border-bottom: 2px solid var(--accent);
+    position: sticky; top: 0; z-index: 1000;
+    backdrop-filter: blur(10px);
 }
 
-.logo { font-size: 1.5rem; font-weight: 700; color: var(--text-main); }
+.logo { font-size: 1.8rem; color: var(--text-main); }
 .logo span { color: var(--accent); }
 
 .nav-links a {
@@ -36,64 +51,92 @@ nav {
     text-decoration: none;
     margin-left: 2rem;
     font-weight: 600;
-    transition: 0.3s;
+    transition: color 0.3s ease;
 }
 
 .nav-links a:hover, .nav-links a.active {
-    color: var(--accent);
+    color: var(--hover-preview);
 }
 
-/* Structure Générale */
-.container { padding: 4rem 10%; }
-.title { 
-    font-size: 2.5rem; 
-    color: var(--text-main); 
-    margin-bottom: 2rem; 
-    border-left: 5px solid var(--accent); 
-    padding-left: 15px; 
+/* --- SECTIONS ANIMÉES ET PARALLAX --- */
+.passion-section {
+    position: relative;
+    min-height: 80vh;
+    padding: 6rem 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+    overflow: hidden;
 }
 
-/* Boutons */
-.btn {
-    display: inline-block;
-    padding: 0.8rem 2rem;
-    background-color: var(--accent);
-    color: var(--bg-dark); /* Texte sombre sur fond clair pour bien lire */
-    text-decoration: none;
-    border-radius: 4px;
-    font-weight: 700;
-    transition: 0.3s;
-    margin-top: 1rem;
-    border: 2px solid var(--accent);
-}
-.btn:hover { 
-    background-color: transparent; 
-    color: var(--accent);
-    transform: translateY(-2px); 
+/* Inversion gauche/droite pour une section sur deux */
+.passion-section:nth-child(even) {
+    flex-direction: row-reverse;
 }
 
-/* Cartes (Expériences, Passions) */
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-.card {
-    background-color: var(--bg-card);
-    padding: 2rem;
+/* Le fond qui défile (Parallax) */
+.parallax-bg {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* C'est ça qui crée l'effet ! */
+    opacity: 0.1; /* Très léger pour ne pas gêner la lecture */
+    z-index: -1;
+}
+
+.passion-content { flex: 1; z-index: 2; }
+.passion-visual { flex: 1; z-index: 2; text-align: center; }
+
+.passion-content h2 { 
+    font-size: 3rem; 
+    color: var(--accent); 
+    margin-bottom: 1rem;
+    border-left: 5px solid var(--icon-color);
+    padding-left: 15px;
+}
+
+.passion-content p { font-size: 1.1rem; margin-bottom: 1.5rem; }
+
+/* Couleur des icônes */
+i { color: var(--icon-color); }
+
+/* --- GALERIE PHOTOS (Grille) --- */
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+    margin-top: 2rem;
+}
+
+.photo-grid img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
     border-radius: 8px;
-    border-top: 3px solid transparent;
-    transition: 0.3s;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
-.card:hover { 
-    border-top: 3px solid var(--accent); 
-    transform: translateY(-5px); 
+
+.photo-grid img:hover {
+    transform: scale(1.05);
+    border-color: var(--hover-preview);
+    box-shadow: 0 10px 20px rgba(248, 249, 250, 0.2);
 }
-.card h3 { color: var(--accent); margin-bottom: 0.5rem; }
 
-/* Images */
-.photo-portfolio { width: 100%; border-radius: 8px; margin-top: 1rem; object-fit: cover; }
+/* --- ANIMATIONS SCROLL (JavaScript va les déclencher) --- */
+.hidden-left { opacity: 0; transform: translateX(-100px); transition: all 1s ease-out; }
+.hidden-right { opacity: 0; transform: translateX(100px); transition: all 1s ease-out; }
+.show { opacity: 1; transform: translateX(0); }
 
+/* Footer */
 footer { 
     text-align: center; 
     padding: 2rem; 
-    background-color: var(--bg-card); 
-    margin-top: 3rem; 
-    color: var(--text-muted); 
+    border-top: 1px solid var(--accent);
+    color: var(--text-main);
+    font-family: "mundial-narrow-variable", sans-serif;
+    font-variation-settings: "wght" 100;
 }
