@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
 
 :root {
-    /* Nouvelle palette de couleurs */
-    --bg-dark: #161B33;      /* Fond principal */
-    --text-main: #DFF2F2;    /* Texte clair */
-    --accent: #6EC0E4;       /* Accents (boutons, bordures) */
-    --icon-color: #F04E9D;   /* Icônes et éléments punchy */
-    --hover-preview: #F8F9FA;/* Aperçus d'interactions / survols */
+    /* Ta palette de couleurs sur mesure */
+    --bg-dark: #222340;      
+    --bg-card: #313359;      
+    --text-main: #F2E6D8;    
+    --text-muted: #A69992;   
+    --accent: #ABA8BF;       
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
