@@ -4,24 +4,25 @@
 /* Définition des thèmes */
 :root {
     /* MODE CLAIR (Défaut) */
-    --text-main: #2D2424;
-    --bg-main: #FDF8F5;
-    --accent: #D47B5E;
-    --icon-color: #E07A5F;
-    --hover-preview: #F2E9E4;
-    --transition-speed: 0.4s;
+    --bg-main: #F7FAFC;       /* Gris très léger, reposant */
+    --text-main: #0F172A;     /* Bleu très foncé, lisible */
+    --accent: #2563EB;        /* Bleu médical moderne (branding/bordures) */
+    --icon-color: #F59E0B;    /* Orange ambré (icônes/punch) */
+    --hover-preview: #14B8A6; /* Turquoise (survol, menus, liens actifs) */
+    
+    --transition-speed: 0.4s; /* Vitesse de transition fluide */
 }
 
 [data-theme="dark"] {
     /* MODE SOMBRE */
-    --text-main: #FDF8F5;
-    --bg-main: #1A1615;
-    --accent: #E69278;
-    --icon-color: #FFB38A;
-    --hover-preview: #3D3532;
+    --bg-main: #0F172A;       /* Bleu nuit, moins agressif que noir pur */
+    --text-main: #E2E8F0;     /* Gris clair doux pour les yeux */
+    --accent: #60A5FA;        /* Bleu plus lumineux */
+    --icon-color: #FBBF24;    /* Jaune/Orange lumineux */
+    --hover-preview: #2DD4BF; /* Turquoise clair */
 }
 
-/* On ajoute une transition douce sur le background et le texte */
+/* Application des couleurs globales avec transition douce */
 body {
     background-color: var(--bg-main);
     color: var(--text-main);
