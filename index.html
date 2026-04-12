@@ -24,7 +24,7 @@
                 <img src="images/photo_profil.jpg" alt="Ulysse Dumas" class="profile-bubble">
             </div>
             <div style="flex: 2; min-width: 320px;">
-                <h1 class="typewriter" style="color: var(--text-main);">Élève ingénieur – Santé numérique</h1>
+                <h1 class="typewriter" style="color: var(--text-main); margin: 0;" data-text="Élève ingénieur – Santé numérique">Élève ingénieur – Santé numérique</h1>
                 <div class="reveal" style="transition-delay: 0.2s;">
                     <p>Étudiant en deuxième année du premier cycle ingénieur à <a href="https://www.esiee.fr/lecole/pourquoi-choisir-esiee-paris" target="_blank" class="text-link">ESIEE Paris</a>, je nourris une passion profonde pour l’innovation et l’application des technologies au service du secteur de la santé. Mon parcours académique, professionnel et personnel me confère les compétences et les connaissances nécessaires pour exceller dans le domaine de la santé numérique.</p>
                     <p>Actuellement délégué de ma promotion et responsable communication de l’association <a href="https://new.express.adobe.com/webpage/UIlp3deJWvHqg" target="_blank" class="text-link">« Le Club Raclette »</a>, je souhaite m’investir au sein de mon établissement afin d’en valoriser l’image et d’apporter mon soutien à mes collègues.</p>
@@ -56,10 +56,42 @@
     <footer>&copy; 2026 Ulysse Dumas</footer>
 
     <script>
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('show'); });
+    // 1. Fonction pour agrandir l'image (Modal)
+    function openModal(src) {
+        const modal = document.getElementById('imageModal');
+        if(modal) {
+            modal.style.display = 'flex';
+            document.getElementById('modalImg').src = src;
+        }
+    }
+
+    // 2. Observer pour les animations et la machine à écrire
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => { 
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show'); 
+                
+                // NOUVEAU : Effet machine à écrire
+                if (entry.target.classList.contains('typewriter') && !entry.target.dataset.typed) {
+                    entry.target.dataset.typed = "true"; // Évite de retaper le texte en boucle
+                    const text = entry.target.getAttribute('data-text');
+                    entry.target.innerHTML = ''; // On vide le texte
+                    let i = 0;
+                    function type() {
+                        if (i < text.length) {
+                            entry.target.innerHTML += text.charAt(i);
+                            i++;
+                            setTimeout(type, 40); // Vitesse : 40 millisecondes par lettre
+                        }
+                    }
+                    setTimeout(type, 300); // Petit délai avant de commencer
+                }
+            }
         });
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    });
+
+    // Appliquer l'observateur aux éléments ciblés
+    document.querySelectorAll('.reveal, .typewriter').forEach(el => observer.observe(el));
     </script>
 </body>
 </html>

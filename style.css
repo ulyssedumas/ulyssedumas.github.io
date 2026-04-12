@@ -97,31 +97,17 @@ nav {
 
 /* --- LE NOUVEAU TYPEWRITER (Machine à écrire infaillible) --- */
 .typewriter {
-    position: relative;
-    display: block;
-    width: fit-content; /* Le conteneur prend EXCATEMENT la taille du texte */
+    width: fit-content; /* La taille s'adapte exactement au mot */
+    margin: 0 auto; /* Centre le titre */
+    border-right: 3px solid var(--icon-color); /* Le curseur clignotant */
+    padding-right: 5px;
+    animation: blink-caret .75s step-end infinite;
+    white-space: pre-wrap; /* Gère les retours à la ligne proprement sur mobile */
 }
 
-.typewriter::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    background-color: var(--bg-main); /* Cache le texte avec la couleur de fond de la page */
-    border-left: 3px solid var(--icon-color); /* Fait office de curseur clignotant */
-    animation: typing-cover 2.5s steps(40, end) forwards, blink-caret-cover .75s step-end infinite;
-    z-index: 2;
-}
-
-@keyframes typing-cover {
-    from { left: 0; width: 100%; } /* Cache tout au début */
-    to { left: 100%; width: 0%; }  /* Dévoile tout le texte à la fin */
-}
-@keyframes blink-caret-cover { 
-    from, to { border-left-color: transparent } 
-    50% { border-left-color: var(--icon-color); } 
+@keyframes blink-caret { 
+    from, to { border-color: transparent } 
+    50% { border-color: var(--icon-color); } 
 }
 
 /* Frise chronologique */
