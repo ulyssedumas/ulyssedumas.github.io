@@ -185,39 +185,42 @@ footer {
     
     /* --- CORRECTION DU MENU MOBILE --- */
     nav { 
-        flex-wrap: wrap; /* Permet aux éléments de passer à la ligne */
+        position: relative; /* <-- AJOUT IMPORTANT : Sert de point d'ancrage au bouton */
+        flex-wrap: wrap; 
         padding: 15px 5%;
     }
     
     /* On place le bouton lune/soleil en haut à droite */
     .theme-switch {
         position: absolute;
-        top: 15px;
+        top: 10px;
         right: 5%;
+        z-index: 50; /* S'assure que le bouton passe au-dessus de tout le reste */
+        margin: 0; /* Retire les marges potentielles */
     }
     
     /* On affiche les liens et on permet le défilement horizontal au doigt */
     .nav-links { 
         display: flex; 
         width: 100%; 
-        overflow-x: auto; /* Active le scroll horizontal */
+        overflow-x: auto; 
         margin-top: 15px;
         padding-bottom: 5px;
-        -webkit-overflow-scrolling: touch; /* Défilement fluide sur iOS */
-        scrollbar-width: none; /* Cache la barre de défilement (Firefox) */
+        -webkit-overflow-scrolling: touch; 
+        scrollbar-width: none; 
     }
-    .nav-links::-webkit-scrollbar { 
-        display: none; /* Cache la barre de défilement (Chrome/Safari) */
-    }
+    .nav-links::-webkit-scrollbar { display: none; }
+    
     .nav-links a { 
         margin-left: 0; 
-        margin-right: 10px; /* Espace entre les boutons */
-        font-size: 14px; /* Un peu plus petit pour mobile */
-        white-space: nowrap; /* Empêche le texte du bouton de se couper en deux */
+        margin-right: 10px; 
+        font-size: 14px; 
+        white-space: nowrap; 
     }
 
     /* --- RESTE DES ADAPTATIONS MOBILES --- */
     .typewriter { white-space: normal; animation: none; border-right: none; width: auto !important; }
+    .typewriter-cursor { display: none; } /* On cache le curseur sur mobile pour éviter les bugs visuels */
     .photo-grid-2col { grid-template-columns: 1fr; }
     .timeline::after { left: 20px; }
     .timeline-item { padding: 10px 20px 40px 50px; margin-bottom: 2rem;}
