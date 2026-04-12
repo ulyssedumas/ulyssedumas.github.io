@@ -2,10 +2,12 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ulysse Dumas | Mon Parcours</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <nav>
         <a href="index.html" class="logo">Ulysse<span>Dumas</span></a>
         <div class="nav-links">
@@ -16,33 +18,87 @@
     </nav>
 
     <div class="container">
-        <h1 class="reveal">Parcours académique et professionnel</h1>
+        <h1 class="reveal" style="font-size: clamp(36px, 5vw, 56px); color: var(--accent); text-align: center; margin-bottom: 4rem;">Parcours académique et professionnel</h1>
 
-        <h2 class="reveal" style="margin-top: 4rem;"><i class="fas fa-graduation-cap" style="color:var(--highlight)"></i> Formation académique</h2>
+        <h2 class="reveal" style="display: flex; align-items: center; gap: 15px; margin-bottom: 2rem;">
+            <i class="fa-solid fa-graduation-cap" style="color: var(--icon-color); font-size: 2.5rem;"></i> Formation académique
+        </h2>
         
-        <div class="card reveal">
-            <h3>Formation Ingénieur en santé numérique | <a href="https://www.esiee.fr/lecole/pourquoi-choisir-esiee-paris" target="_blank" style="color:var(--accent)">ESIEE Paris</a></h3>
-            <span class="text-secondary">Sept 2024 – Sept 2029</span>
-            <p style="margin-top:1rem;">Enseignement de sciences fondamentales, de sciences de l’ingénieur et management. L'objectif est de former des ingénieurs capables de collaborer efficacement et connectés aux réalités opérationnelles.</p>
+        <div class="grid-2" style="margin-bottom: 5rem;">
+            <div class="card reveal">
+                <h3>Formation Ingénieur en santé numérique | <a href="https://www.esiee.fr/lecole/pourquoi-choisir-esiee-paris" target="_blank" class="text-link">ESIEE Paris</a></h3>
+                <p class="text-secondary" style="color: var(--icon-color); font-weight: 700; margin-bottom: 1rem;">Sept 2024 – Sept 2029</p>
+                <p>Enseignement de sciences fondamentales, de sciences de l’ingénieur, de management, d’anglais et d’espagnol et de sciences humaines. La formation dispensée par l’ESIEE Paris a pour objectif de former des ingénieurs capables de collaborer efficacement et de travailler en équipe, tout en s’efforçant de rester constamment informés des réalités opérationnelles du monde professionnel.</p>
+            </div>
+
+            <div class="card reveal" style="transition-delay: 0.2s;">
+                <h3>PASS (Parcours accès santé spécifique) | <a href="https://facmedecine.umontpellier.fr/" target="_blank" class="text-link">Université de Médecine de Montpellier</a></h3>
+                <p class="text-secondary" style="color: var(--icon-color); font-weight: 700; margin-bottom: 1rem;">Aout 2023 – Sept 2024</p>
+                <p>La Faculté de Médecine de Montpellier, institution médicale parmi les plus anciennes au monde avec une histoire dépassant les huit siècles, m’a offert l’opportunité de bénéficier d’un enseignement de haute qualité. J’ai suivi une formation intensive en sciences médicales et fondamentales, englobant la biologie, la physiologie, la chimie, la physique et les mathématiques. Cette formation a permis de développer une rigueur scientifique, des capacités d’analyse solides et une excellente gestion du temps. L’expérience acquise au cours de cette formation a contribué à l’acquisition de compétences transférables, telles que la méthodologie de travail, la persévérance et l’adaptabilité, qui s’avèrent précieuses dans mon parcours d’ingénieur.</p>
+            </div>
         </div>
 
-        <div class="card reveal">
-            <h3>PASS (Parcours accès santé spécifique) | <a href="https://facmedecine.umontpellier.fr/" target="_blank" style="color:var(--accent)">Univ. Montpellier</a></h3>
-            <span class="text-secondary">Aout 2023 – Sept 2024</span>
-            <p style="margin-top:1rem;">Huit siècles d'histoire médicale. Formation intensive développant rigueur scientifique, persévérance et méthodologie de travail précieuse pour l'ingénierie.</p>
+        <h2 class="reveal" style="display: flex; align-items: center; gap: 15px; margin-bottom: 2rem;">
+            <i class="fa-solid fa-briefcase" style="color: var(--icon-color); font-size: 2.5rem;"></i> Expérience professionnelle
+        </h2>
+        
+        <div class="grid-2">
+            <div class="card reveal">
+                <h3>Vacataire | <a href="https://www.esiee.fr/lecole/pourquoi-choisir-esiee-paris" target="_blank" class="text-link">ESIEE Paris</a></h3>
+                <p class="text-secondary" style="color: var(--icon-color); font-weight: 700; margin-bottom: 1rem;">Déc 2025</p>
+                <p>Je suis actuellement employé en tant que vacataire à l’ESIEE Paris. Mes responsabilités incluent : L’accueil des visiteurs et la gestion de leurs demandes sont des aspects clés du rôle. La supervision des examens et le maintien de l’intégrité académique sont également primordiaux. L’accompagnement des étudiants dans leurs démarches et leur orientation est un autre volet important. L’organisation et la participation aux journées d’immersion contribuent à l’expérience globale des étudiants. Enfin, la gestion et l’inventaire des matériaux pédagogiques sont essentiels au bon fonctionnement des activités pédagogiques.</p>
+            </div>
+
+            <div class="card reveal">
+                <h3>Responsable communications | <a href="https://new.express.adobe.com/webpage/UIlp3deJWvHqg" target="_blank" class="text-link">Club Raclette ESIEE Paris</a></h3>
+                <p class="text-secondary" style="color: var(--icon-color); font-weight: 700; margin-bottom: 1rem;">Sept 2025</p>
+                <p>À la tête du pôle communication, responsable de la page Instagram et Facebook et de tous les visuels produits par le club raclette ESIEE Paris.</p>
+                <ul>
+                    <li>Gestion des réseaux sociaux, création de contenus (Canva, Figma, PremierePro), envoi de newsletters et création d’un site web.</li>
+                    <li>Collaboration dans une équipe de 8 personnes : organisation des évènements, des réunions et suivi des projets.</li>
+                    <li>Participation à l’organisation d’événements internes et communication avec les étudiants pour assurer leur succès.</li>
+                </ul>
+            </div>
+
+            <div class="card reveal">
+                <h3>Stagiaire en ingénierie et commerce | <a href="https://www.tachycard.com" target="_blank" class="text-link">TachyCard</a></h3>
+                <p class="text-secondary" style="color: var(--icon-color); font-weight: 700; margin-bottom: 1rem;">Juil 2025 – Aout 2025</p>
+                <p>Au cours de mon stage d’exécution au sein de Tachycard, une entreprise innovante spécialisée dans le suivi numérique (SaaS) des patients porteurs de dispositifs cardiaques (rythmologie), j’ai acquis une expérience significative dans plusieurs domaines clés. J’ai notamment traduit les besoins cliniques en fonctionnalités SaaS, soutenu le déploiement des solutions, participé à l’élaboration de modèles de stratégie financière et d’analyse de marché, accompagné les partenaires de santé et suivi l’expérience utilisateur. Ce stage m’a permis de conjuguer la rigueur de l’ingénierie médicale à la réactivité du monde des startups, tout en approfondissant ma compréhension des enjeux économiques critiques du secteur de la MedTech.</p>
+            </div>
+
+            <div class="card reveal">
+                <h3>Manutentionnaire entrepôt | Piscinistes Associés Somédi</h3>
+                <p class="text-secondary" style="color: var(--icon-color); font-weight: 700; margin-bottom: 1rem;">2022 et 2024</p>
+                <p>Dans cette entreprise spécialisée dans la conception et la distribution de matériels de piscine, j’ai assuré la pérennité de la chaîne logistique en environnement technique. Mes responsabilités incluaient la gestion des flux et le stockage des produits (réception, magasinage, préparation des commandes, optimisation de l’espace d’entreposage). J’ai veillé au respect des protocoles de sécurité et des normes environnementales lors de la manipulation et du stockage des produits de traitement de l’eau. Enfin, j’ai collaboré avec les équipes de vente et les techniciens pour garantir la disponibilité des équipements et le respect des délais de livraison. Cette expérience m’a permis de confronter la théorie logistique à la réalité opérationnelle et de consolider ma rigueur face aux protocoles de sécurité industrielle.</p>
+            </div>
+
+            <div class="card reveal">
+                <h3>Mission d’intérêt général (SNU) – Observation des politiques publiques | Assemblée nationale</h3>
+                <p class="text-secondary" style="color: var(--icon-color); font-weight: 700; margin-bottom: 1rem;">Juil 2021</p>
+                <p>Dans le cadre de mon engagement au SNU, j’ai été sélectionné pour observer les politiques publiques au Cabinet de Mme Patricia Mirallès, Députée de l’Hérault. J’ai analysé les enjeux territoriaux, notamment l’accès aux soins et la santé publique, et participé à des missions de mémoire et citoyenneté, comme l’accompagnement lors de commémorations officielles. J’ai également observé la communication institutionnelle entre les élus, les structures de santé et les citoyens. Cette expérience m’a permis de développer une vision globale de l’intérêt général, essentielle pour mon futur rôle d’ingénieur dans le secteur médical, où les enjeux technologiques, les besoins de santé publique et les cadres réglementaires se rencontrent.</p>
+            </div>
+
+            <div class="card reveal">
+                <h3>Stagiaire en Observation clinique & Biomécanique humaine | Cabinet Libéral</h3>
+                <p class="text-secondary" style="color: var(--icon-color); font-weight: 700; margin-bottom: 1rem;">Juil 2020</p>
+                <p>Mon immersion au cabinet de Mr Philippe Magri m’a permis d’appréhender la prise en charge thérapeutique sous l’angle de la mécanique corporelle. J’ai observé les protocoles de diagnostic et de traitement des troubles neuro-musculo-squelettiques, analysé la relation praticien-patient, notamment le parcours de soin, l’écoute active et l’adaptation des techniques aux besoins spécifiques de chaque patient. J’ai également été sensibilisé à l’ergonomie, à la posture et aux outils de santé connectée utilisés en cabinet libéral. Cette expérience a renforcé mon souhait de concevoir des solutions technologiques au service de la rééducation et de l’amélioration de la mobilité humaine.</p>
+            </div>
+
+            <div class="card reveal">
+                <h3>Stagiaire – Production audiovisuelle | France Télévisions</h3>
+                <p class="text-secondary" style="color: var(--icon-color); font-weight: 700; margin-bottom: 1rem;">Nov 2019 – Déc 2019</p>
+                <p>Cette immersion dans les coulisses de « Un si grand soleil » offre un aperçu des aspects techniques et organisationnels de la réalisation télévisuelle. L’observation des métiers de l’image, du son et de la lumière sur les plateaux permet de comprendre la mise en œuvre technique. Le processus de création, centré sur la rédaction des scripts et la coordination entre réalisation et équipes techniques, révèle la complexité des interactions pour concrétiser une œuvre audiovisuelle. Enfin, la sensibilisation au travail d’équipe, essentiel à la synergie entre les différents corps de métiers, souligne l’importance du respect des délais de production.</p>
+            </div>
         </div>
+    </div>
 
-        <h2 class="reveal" style="margin-top: 4rem;"><i class="fas fa-briefcase" style="color:var(--highlight)"></i> Expérience professionnelle</h2>
+    <footer>&copy; 2026 Ulysse Dumas</footer>
 
-        <div class="card reveal">
-            <h3>Stagiaire en ingénierie et commerce | TachyCard</h3>
-            <span class="text-secondary">Juil 2025 – Aout 2025</span>
-            <p style="margin-top:1rem;">Traduction des besoins cliniques en fonctionnalités SaaS pour le suivi de dispositifs cardiaques. Fusion entre rigueur médicale et réactivité startup.</p>
-        </div>
-
-        </div>
-
-    <footer>© 2026 Ulysse Dumas - ESIEE Paris</footer>
-    <script src="script.js"></script>
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('show'); });
+        });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
 </body>
 </html>

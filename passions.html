@@ -2,10 +2,12 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ulysse Dumas | Passions</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <nav>
         <a href="index.html" class="logo">Ulysse<span>Dumas</span></a>
         <div class="nav-links">
@@ -15,48 +17,63 @@
         </div>
     </nav>
 
-    <div id="modal" onclick="this.style.display='none'"><img id="modalImg"></div>
+    <div id="imageModal" onclick="this.style.display='none'">
+        <span class="close-modal">&times;</span>
+        <img id="modalImg">
+    </div>
 
     <div class="container">
-        <div class="reveal">
+        
+        <div class="reveal" style="margin-bottom: 6rem;">
             <h1>Photographie</h1>
-            <p style="font-style: italic; opacity: 0.8;">Je nourris un vif intérêt pour la photographie de voyage et d’événements sportifs et culturels. Cette passion me confère une perspective unique sur le monde.</p>
+            <p class="text-secondary" style="font-size: 1.2rem;">Je nourris un vif intérêt pour la photographie de voyage et d’événements sportifs et culturels. Cette passion me confère une perspective unique sur le monde qui m’entoure, me permettant de capturer des instants précieux et de transmettre des émotions authentiques.</p>
             
-            <div class="photo-grid" style="margin-top: 3rem; grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(3, 1fr);">
-                <img src="images/image1.jpg" onclick="zoom(this.src)">
-                <img src="images/image2.jpg" onclick="zoom(this.src)">
-                <img src="images/image3.jpg" onclick="zoom(this.src)">
-                <img src="images/image4.jpg" onclick="zoom(this.src)">
-                <img src="images/image5.jpg" onclick="zoom(this.src)">
-                <img src="images/image6.jpg" onclick="zoom(this.src)">
+            <div class="photo-grid-2col">
+                <img src="images/image1.jpg" onclick="openModal(this.src)" alt="Photographie 1">
+                <img src="images/image2.jpg" onclick="openModal(this.src)" alt="Photographie 2">
+                <img src="images/image3.jpg" onclick="openModal(this.src)" alt="Photographie 3">
+                <img src="images/image4.jpg" onclick="openModal(this.src)" alt="Photographie 4">
+                <img src="images/image5.jpg" onclick="openModal(this.src)" alt="Photographie 5">
+                <img src="images/image6.jpg" onclick="openModal(this.src)" alt="Photographie 6">
             </div>
         </div>
 
-        <div class="reveal" style="margin-top: 6rem;">
-            <h2><i class="fas fa-fish" style="color:var(--accent)"></i> Pêche</h2>
-            <p>Passionné de pêche depuis mon enfance, j’ai affiné mes compétences techniques et ma patience en tant que membre d’un club de pêche sportive.</p>
+        <div class="reveal" style="margin-bottom: 6rem;">
+            <h1>Pêche</h1>
+            <p>Passionné de pêche depuis mon enfance, j’ai affiné mes compétences techniques et ma patience en tant que membre d’un club de pêche sportive. La compréhension de la faune et de la flore est au cœur de ma pratique, et je suis convaincu que ces qualités sont essentielles à la réussite.</p>
+            
+            <div class="photo-grid-2col">
+                <img src="images/peche1.jpg" onclick="openModal(this.src)" alt="Pêche 1">
+                <img src="images/peche2.jpg" onclick="openModal(this.src)" alt="Pêche 2">
+            </div>
         </div>
 
-        <div class="reveal" style="margin-top: 4rem;">
-            <h2><i class="fas fa-running" style="color:var(--highlight)"></i> Sports</h2>
-            <p>
-                Le <a href="https://www.ffjudo.com/" target="_blank" style="color:var(--accent)">judo</a> m'a inculqué rigueur et maîtrise de soi. 
-                Le <a href="https://www.ffc.fr/" target="_blank" style="color:var(--accent)">cyclisme</a> a renforcé mon endurance. 
-                Le <a href="https://www.fft.fr/" target="_blank" style="color:var(--accent)">tennis</a> m'a apporté stratégie et concentration. 
-                La <a href="https://www.ffnatation.fr/" target="_blank" style="color:var(--accent)">natation</a> et le 
-                <a href="https://www.ffkmda.fr/" target="_blank" style="color:var(--accent)">Krav Maga</a> ont développé ma gestion du stress.
-            </p>
+        <div class="reveal">
+            <h1>Sports</h1>
+            <p>Fort d’une expérience pluriannuelle dans diverses disciplines sportives, j’ai développé une endurance et une persévérance exceptionnelles. Le <a href="https://www.ffjudo.com/" target="_blank" class="text-link">judo</a> m’a inculqué rigueur et maîtrise de soi, essentielles en milieu professionnel. Le <a href="https://www.ffc.fr/" target="_blank" class="text-link">cyclisme</a> a renforcé mon endurance et mon aptitude au dépassement de soi. Le <a href="https://www.fft.fr/" target="_blank" class="text-link">tennis</a> m’a apporté stratégie et concentration, précieuses pour la prise de décision. Six ans de <a href="https://www.ffnatation.fr/" target="_blank" class="text-link">natation</a> m’ont donné une excellente condition physique et une grande résistance. Enfin, le Krav Maga a développé ma réactivité et ma gestion du stress. Cet ensemble témoigne de mon engagement, de ma polyvalence et de mon éthique personnelle, atouts pour une carrière réussie.</p>
+            
+            <div class="photo-grid-2col">
+                <img src="images/vélo1.jpg" onclick="openModal(this.src)" alt="Vélo 1">
+                <img src="images/vélo2.jpg" onclick="openModal(this.src)" alt="Vélo 2">
+            </div>
         </div>
+
     </div>
 
-    <footer>© 2026 Ulysse Dumas</footer>
+    <footer>&copy; 2026 Ulysse Dumas</footer>
 
     <script>
-        function zoom(src) {
-            document.getElementById('modal').style.display = 'flex';
+        // Agrandir l'image
+        function openModal(src) {
+            document.getElementById('imageModal').style.display = 'flex';
             document.getElementById('modalImg').src = src;
         }
+
+        // Animation au défilement
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('show'); });
+        });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     </script>
-    <script src="script.js"></script>
 </body>
 </html>
