@@ -2,18 +2,16 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
 
 :root {
-    /* Palette de couleurs */
     --text-main: #161B33;    /* Texte principal */
-    --bg-main: #DFF2F2;      /* Fond clair global */
-    --accent: #6EC0E4;       /* Accents, bordures */
-    --icon-color: #F04E9D;   /* Icônes et éléments punchy */
-    --hover-preview: #F8F9FA;/* Aperçu, survol, menus, footer */
+    --bg-main: #EDF0E6;      /* Fond clair global */
+    --accent: #C1DEEA;       /* Accents, bordures */
+    --icon-color: #F08572;   /* Icônes et éléments punchy */
+    --hover-preview: #E8E4CD;/* Aperçu, survol, menus, footer */
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-    /* Typographie style Apple / Moderne */
     font-family: "Mundial Narrow Variable", -apple-system, BlinkMacSystemFont, "San Francisco", "Montserrat", "Fustat", sans-serif;
     background-color: var(--bg-main);
     color: var(--text-main);
@@ -21,22 +19,25 @@ body {
     overflow-x: hidden;
 }
 
-/* Tailles de polices responsives (S'adaptent à l'écran) */
 h1 { font-size: clamp(32px, 4vw, 48px); font-weight: 700; margin-bottom: 1.5rem; letter-spacing: -0.5px; }
 h2 { font-size: clamp(24px, 3.5vw, 36px); font-weight: 600; margin-bottom: 1.2rem; }
 h3 { font-size: clamp(20px, 3vw, 28px); font-weight: 600; margin-bottom: 0.8rem; }
 p, li { font-size: clamp(16px, 2vw, 18px); font-weight: 400; margin-bottom: 1.2rem; text-align: justify; }
+ul { margin-bottom: 1.5rem; margin-left: 20px; }
 .text-secondary { font-size: clamp(12px, 1.5vw, 14px); color: #4A5070; }
 
-/* Navigation (Menu) */
+/* Classe utilitaire pour le noir demandé */
+.text-black { color: #000000 !important; }
+
+/* Navigation */
 nav {
-    background: rgba(248, 249, 250, 0.85); /* Couleur #F8F9FA avec transparence */
+    background: rgba(248, 249, 250, 0.85);
     padding: 1.2rem 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: sticky; top: 0; z-index: 1000;
-    backdrop-filter: blur(20px); /* Effet flou Apple */
+    backdrop-filter: blur(20px);
     border-bottom: 1px solid rgba(110, 192, 228, 0.3);
 }
 
@@ -50,13 +51,10 @@ nav {
 }
 .nav-links a:hover, .nav-links a.active {
     background-color: var(--accent); color: white;
-    transform: scale(1.05);
 }
 
-/* Structure & Conteneurs */
 .container { padding: 5rem 10%; max-width: 1400px; margin: 0 auto; }
 
-/* Liens Hypertextes (Dans le texte) */
 .text-link {
     color: var(--text-main);
     text-decoration: underline;
@@ -65,143 +63,88 @@ nav {
     text-underline-offset: 4px;
     font-weight: 600;
     transition: all 0.3s ease;
-    padding: 0 4px;
-    border-radius: 6px;
 }
 .text-link:hover {
-    background-color: var(--hover-preview);
-    text-decoration-color: var(--icon-color);
     color: var(--icon-color);
+    text-decoration-color: var(--icon-color);
 }
 
-/* Bulles (Profil & Boutons) */
 .profile-bubble {
-    width: 280px; height: 280px;
-    border-radius: 50%; /* Bulle ronde */
-    object-fit: cover;
+    width: 280px; height: 280px; border-radius: 50%; object-fit: cover;
     border: 5px solid var(--hover-preview);
     box-shadow: 0 20px 40px rgba(110, 192, 228, 0.3);
-    transition: transform 0.5s ease;
 }
-.profile-bubble:hover { transform: scale(1.05); }
 
 .bubble-btn {
     display: inline-flex; align-items: center; gap: 10px;
-    padding: 12px 25px;
-    background-color: var(--hover-preview);
-    color: var(--text-main);
-    text-decoration: none;
-    border-radius: 50px; /* Effet Bulle */
-    font-weight: 600;
-    transition: all 0.3s ease;
-    border: 2px solid var(--accent);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    padding: 12px 25px; background-color: var(--hover-preview);
+    color: var(--text-main); text-decoration: none;
+    border-radius: 50px; font-weight: 600;
+    transition: all 0.3s ease; border: 2px solid var(--accent);
 }
 .bubble-btn:hover {
-    transform: scale(1.08) translateY(-3px);
-    background-color: var(--accent);
-    color: white;
-    border-color: var(--accent);
+    transform: scale(1.05); background-color: var(--accent); color: white;
 }
-.bubble-btn i { color: var(--icon-color); font-size: 1.2rem; }
+.bubble-btn i { color: var(--icon-color); }
 .bubble-btn:hover i { color: white; }
 
-/* Cartes (Arrondis prononcés) */
 .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 3rem; }
 .card {
-    background: rgba(248, 249, 250, 0.6); /* #F8F9FA transparent */
-    backdrop-filter: blur(15px);
-    padding: 3rem;
-    border-radius: 30px; /* Arrondis très doux type Apple */
+    background: rgba(248, 249, 250, 0.6); backdrop-filter: blur(15px);
+    padding: 3rem; border-radius: 30px;
     border: 1px solid rgba(255,255,255,0.8);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: all 0.4s ease;
 }
-.card:hover { 
-    transform: scale(1.03) translateY(-10px); 
-    box-shadow: 0 20px 40px rgba(110, 192, 228, 0.2); 
-}
+.card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(110, 192, 228, 0.2); }
 .card-icon { font-size: 2rem; color: var(--icon-color); margin-bottom: 1rem; }
 
-/* Grilles Photos Passions (2 colonnes) */
 .photo-grid-2col {
     display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 2rem;
 }
 .photo-grid-2col img {
     width: 100%; height: 250px; object-fit: cover;
-    border-radius: 20px; cursor: pointer;
-    transition: all 0.4s ease;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    border-radius: 20px; cursor: pointer; transition: 0.4s;
 }
-.photo-grid-2col img:hover { transform: scale(1.05); box-shadow: 0 15px 30px rgba(110, 192, 228, 0.4); }
+.photo-grid-2col img:hover { transform: scale(1.05); }
 
-/* Effets Visuels (Animations au défilement) */
-.reveal { opacity: 0; filter: blur(15px); transform: translateY(40px) scale(0.95); transition: all 1s cubic-bezier(0.25, 1, 0.5, 1); }
-.reveal.show { opacity: 1; filter: blur(0); transform: translateY(0) scale(1); }
+.reveal { opacity: 0; filter: blur(15px); transform: translateY(40px); transition: all 1s ease; }
+.reveal.show { opacity: 1; filter: blur(0); transform: translateY(0); }
 
-/* Animation Typewriter (Machine à écrire) */
+/* --- CORRECTION TYPEWRITER --- */
 .typewriter {
-    overflow: hidden; white-space: nowrap; border-right: 3px solid var(--icon-color);
-    animation: typing 2.5s steps(40, end), blink-caret .75s step-end infinite;
+    overflow: hidden; /* Cache le texte pendant l'animation */
+    white-space: nowrap; /* Force le texte sur une seule ligne */
+    border-right: 3px solid var(--icon-color); /* Curseur */
+    width: 0; /* Commence à largeur 0 */
+    animation: typing 2.5s steps(40, end) forwards, blink-caret .75s step-end infinite;
 }
-@keyframes typing { from { width: 0 } to { width: 100% } }
+
+@keyframes typing {
+    from { width: 0 }
+    /* forwards à la fin de l'animation applique l'état final à 100% */
+    to { width: max-content; } /* CORRECTION : S'adapte parfaitement à la longueur du texte sans couper */
+}
 @keyframes blink-caret { from, to { border-color: transparent } 50% { border-color: var(--icon-color); } }
 
-/* Lightbox Modal (Croix en haut à gauche) */
 #imageModal {
     display: none; position: fixed; z-index: 2000; top: 0; left: 0;
     width: 100%; height: 100%; background: rgba(22, 27, 51, 0.85); backdrop-filter: blur(10px);
     justify-content: center; align-items: center; cursor: pointer;
 }
-#modalImg { max-width: 90%; max-height: 90%; border-radius: 20px; box-shadow: 0 0 50px rgba(0,0,0,0.5); }
-.close-modal { 
-    position: absolute; top: 30px; left: 40px; /* CROIX A GAUCHE */
-    color: var(--bg-main); font-size: 50px; font-weight: 300; transition: 0.3s; 
-}
-.close-modal:hover { color: var(--icon-color); transform: scale(1.2); }
+#modalImg { max-width: 90%; max-height: 90%; border-radius: 20px; }
+.close-modal { position: absolute; top: 30px; left: 40px; color: var(--bg-main); font-size: 50px; }
 
-/* Footer */
-footer { 
-    text-align: center; padding: 2.5rem; 
-    background-color: var(--hover-preview); 
+footer {
+    text-align: center; padding: 2.5rem;
+    background-color: var(--hover-preview);
     color: var(--text-main); font-weight: 600;
     border-top: 1px solid rgba(110, 192, 228, 0.2);
 }
 
-/* Responsive */
 @media (max-width: 768px) {
     .container { padding: 3rem 5%; }
-    .nav-links { display: none; /* A améliorer avec un menu burger si besoin */ }
-    .typewriter { white-space: normal; animation: none; border-right: none; }
+    .nav-links { display: none; }
+    /* Désactive l'effet machine à écrire sur mobile pour éviter les bugs */
+    .typewriter { white-space: normal; animation: none; border-right: none; width: auto; }
     .photo-grid-2col { grid-template-columns: 1fr; }
-}
-
-/* --- FRISE CHRONOLOGIQUE (TIMELINE) --- */
-.timeline {
-    position: relative;
-    max-width: 1000px;
-    margin: 4rem auto;
-    padding: 2rem 0;
-}
-/* La ligne centrale */
-.timeline::after {
-    content: ''; position: absolute; width: 4px; background-color: var(--accent);
-    top: 0; bottom: 0; left: 50px; border-radius: 2px;
-}
-.timeline-item {
-    padding: 10px 40px 40px 100px; position: relative; width: 100%;
-}
-/* Le point sur la ligne */
-.timeline-item::after {
-    content: ''; position: absolute; width: 20px; height: 20px;
-    right: auto; left: 42px; top: 15px;
-    background-color: var(--bg-main); border: 4px solid var(--icon-color);
-    border-radius: 50%; z-index: 1; transition: 0.3s;
-}
-.timeline-item:hover::after { background-color: var(--icon-color); transform: scale(1.3); box-shadow: 0 0 15px var(--icon-color); }
-
-/* Responsivité de la timeline */
-@media (max-width: 768px) {
-    .timeline::after { left: 20px; }
-    .timeline-item { padding: 10px 20px 40px 50px; }
-    .timeline-item::after { left: 12px; }
 }
