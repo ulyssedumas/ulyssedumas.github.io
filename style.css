@@ -8,7 +8,7 @@
     --text-main: #0F172A;     /* Bleu très foncé, lisible */
     --accent: #2563EB;        /* Bleu médical moderne (branding/bordures) */
     --icon-color: #f5690b;    /* Orange ambré (icônes/punch) */
-    --hover-preview: #14adb8; /* Turquoise (survol, menus, liens actifs) */
+    --hover-preview: #41bcdb; /* Turquoise (survol, menus, liens actifs) */
     
     --transition-speed: 0.4s; /* Vitesse de transition fluide */
 }
@@ -19,7 +19,7 @@
     --text-main: #E2E8F0;     /* Gris clair doux pour les yeux */
     --accent: #2563EB;        /* Bleu plus lumineux */
     --icon-color: #f5690b;    /* Jaune/Orange lumineux */
-    --hover-preview: #14adb8; /* Turquoise clair */
+    --hover-preview: #1497b8; /* Turquoise clair */
 }
 
 /* Application des couleurs globales avec transition douce */
