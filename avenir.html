@@ -7,6 +7,16 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <nav>
+    <a href="index.html" class="logo">Ton<span>Nom</span></a>
+    <div class="nav-links">
+        <a href="index.html">Accueil</a>
+        <a href="parcours.html">Parcours</a>
+        <button id="theme-toggle" class="theme-switch">
+            <i class="fas fa-moon"></i>
+        </button>
+    </div>
+    </nav>
 
     <nav>
         <a href="index.html" class="logo">Ulysse<span>Dumas</span></a>
@@ -115,7 +125,30 @@
     <footer>&copy; 2026 Ulysse Dumas</footer>
 
     <script>
-    // 1. Fonction pour agrandir l'image (Modal)
+    // --- GESTION DU THÈME (CLAIR / SOMBRE) ---
+    const toggleBtn = document.getElementById('theme-toggle');
+    const htmlElement = document.documentElement;
+    const themeIcon = toggleBtn.querySelector('i');
+
+    // Vérifier s'il y a un thème enregistré
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    htmlElement.setAttribute('data-theme', savedTheme);
+    updateIcon(savedTheme);
+
+    toggleBtn.addEventListener('click', () => {
+        const currentTheme = htmlElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        
+        htmlElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateIcon(newTheme);
+    });
+
+    function updateIcon(theme) {
+        themeIcon.className = theme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
+    }
+
+    // --- MODAL IMAGE ---
     function openModal(src) {
         const modal = document.getElementById('imageModal');
         if(modal) {
@@ -124,18 +157,15 @@
         }
     }
 
-    // 2. Observer pour les animations et la machine à écrire
+    // --- MACHINE À ÉCRIRE ET REVEAL ---
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => { 
             if (entry.isIntersecting) {
                 entry.target.classList.add('show'); 
                 
-                // NOUVEAU : Effet machine à écrire gérant les retours à la ligne
                 if (entry.target.classList.contains('typewriter') && !entry.target.dataset.typed) {
                     entry.target.dataset.typed = "true";
                     const text = entry.target.getAttribute('data-text');
-                    
-                    // On prépare le terrain : une zone pour le texte + le curseur à la fin
                     entry.target.innerHTML = '<span class="typed-text"></span><span class="typewriter-cursor">|</span>';
                     const textContainer = entry.target.querySelector('.typed-text');
                     
@@ -144,16 +174,15 @@
                         if (i < text.length) {
                             textContainer.innerHTML += text.charAt(i);
                             i++;
-                            setTimeout(type, 40); // 40ms par lettre
+                            setTimeout(type, 40);
                         }
                     }
-                    setTimeout(type, 300); // Petit délai avant de commencer
+                    setTimeout(type, 300);
                 }
             }
         });
     });
 
-    // Appliquer l'observateur aux éléments ciblés
     document.querySelectorAll('.reveal, .typewriter').forEach(el => observer.observe(el));
     </script>
 </body>
