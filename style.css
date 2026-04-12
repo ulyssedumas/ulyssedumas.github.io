@@ -2,11 +2,11 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
 
 :root {
-    --text-main: #161B33;    /* Texte principal */
-    --bg-main: #EFEAE9;      /* Fond clair global */
-    --accent: #CCA469;       /* Accents, bordures */
-    --icon-color: #F07A50;   /* Icônes et éléments punchy */
-    --hover-preview: #E8E4CD;/* Aperçu, survol, menus, footer */
+    --bg-main: #FFF9F2;      /* Fond crème */
+    --text-main: #2D241E;    /* Texte brun foncé */
+    --accent: #D9A066;       /* Ocre doux */
+    --icon-color: #E67E22;   /* Orange punchy (accessible) */
+    --hover-preview: #FAD7A0;/* Pêche très clair */
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
