@@ -2,7 +2,6 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
 
 :root {
-    /* Ta nouvelle palette de couleurs */
     --text-main: #161B33;    /* Texte principal */
     --bg-main: #EFEAE9;      /* Fond clair global */
     --accent: #CCA469;       /* Accents, bordures */
@@ -20,7 +19,6 @@ body {
     overflow-x: hidden;
 }
 
-/* Typographie globale et tailles responsives */
 h1 { font-size: clamp(32px, 4vw, 48px); font-weight: 700; margin-bottom: 1.5rem; letter-spacing: -0.5px; }
 h2 { font-size: clamp(24px, 3.5vw, 36px); font-weight: 600; margin-bottom: 1.2rem; }
 h3 { font-size: clamp(20px, 3vw, 28px); font-weight: 600; margin-bottom: 0.8rem; }
@@ -29,16 +27,14 @@ ul { margin-bottom: 1.5rem; margin-left: 20px; }
 .text-secondary { font-size: clamp(12px, 1.5vw, 14px); color: #4A5070; }
 .text-black { color: #000000 !important; }
 
-/* Navigation (Menu en haut) */
+/* Navigation */
 nav {
-    background: rgba(232, 228, 205, 0.85); /* Utilisation de hover-preview avec transparence */
+    background: rgba(232, 228, 205, 0.85); 
     padding: 1.2rem 5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: flex; justify-content: space-between; align-items: center;
     position: sticky; top: 0; z-index: 1000;
     backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(204, 164, 105, 0.3); /* Utilisation de accent transparent */
+    border-bottom: 1px solid rgba(204, 164, 105, 0.3); 
 }
 
 .logo { font-size: 1.5rem; font-weight: 700; color: var(--text-main); text-decoration: none; }
@@ -49,35 +45,23 @@ nav {
     font-weight: 600; transition: all 0.3s ease;
     padding: 8px 15px; border-radius: 20px;
 }
-.nav-links a:hover, .nav-links a.active {
-    background-color: var(--accent); color: white;
-}
+.nav-links a:hover, .nav-links a.active { background-color: var(--accent); color: white; }
 
-/* Structure globale */
 .container { padding: 5rem 10%; max-width: 1400px; margin: 0 auto; }
 
-/* Liens dans le texte (soulignement stylisé) */
+/* Liens textuels */
 .text-link {
-    color: var(--text-main);
-    text-decoration: underline;
-    text-decoration-color: var(--accent);
-    text-decoration-thickness: 3px;
-    text-underline-offset: 4px;
-    font-weight: 600;
-    transition: all 0.3s ease;
+    color: var(--text-main); text-decoration: underline; text-decoration-color: var(--accent);
+    text-decoration-thickness: 3px; text-underline-offset: 4px;
+    font-weight: 600; transition: all 0.3s ease;
 }
-.text-link:hover {
-    color: var(--icon-color);
-    text-decoration-color: var(--icon-color);
-}
+.text-link:hover { color: var(--icon-color); text-decoration-color: var(--icon-color); }
 
-/* Bulle photo de profil et Boutons */
+/* Bulles & Boutons */
 .profile-bubble {
     width: 280px; height: 280px; border-radius: 50%; object-fit: cover;
-    border: 5px solid var(--hover-preview);
-    box-shadow: 0 20px 40px rgba(204, 164, 105, 0.2);
+    border: 5px solid var(--hover-preview); box-shadow: 0 20px 40px rgba(204, 164, 105, 0.2);
 }
-
 .bubble-btn {
     display: inline-flex; align-items: center; gap: 10px;
     padding: 12px 25px; background-color: var(--hover-preview);
@@ -85,99 +69,99 @@ nav {
     border-radius: 50px; font-weight: 600;
     transition: all 0.3s ease; border: 2px solid var(--accent);
 }
-.bubble-btn:hover {
-    transform: scale(1.05); background-color: var(--accent); color: white;
-}
+.bubble-btn:hover { transform: scale(1.05); background-color: var(--accent); color: white; }
 .bubble-btn i { color: var(--icon-color); }
 .bubble-btn:hover i { color: white; }
 
-/* Cartes transparentes (Glassmorphism) */
+/* Cartes transparentes */
 .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 3rem; }
 .card {
     background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(15px);
-    padding: 3rem; border-radius: 30px;
-    border: 1px solid rgba(255,255,255,0.6);
+    padding: 3rem; border-radius: 30px; border: 1px solid rgba(255,255,255,0.6);
     transition: all 0.4s ease;
 }
 .card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(204, 164, 105, 0.15); }
 .card-icon { font-size: 2rem; color: var(--icon-color); margin-bottom: 1rem; }
 
 /* Grille Photos */
-.photo-grid-2col {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 2rem;
-}
+.photo-grid-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 2rem; }
 .photo-grid-2col img {
-    width: 100%; height: 250px; object-fit: cover;
-    border-radius: 20px; cursor: pointer; transition: 0.4s;
+    width: 100%; height: 250px; object-fit: cover; border-radius: 20px; 
+    cursor: pointer; transition: 0.4s;
 }
 .photo-grid-2col img:hover { transform: scale(1.05); box-shadow: 0 10px 20px rgba(204, 164, 105, 0.3); }
 
-/* Animations Scroll (Apparition flou) */
+/* Animations Scroll */
 .reveal { opacity: 0; filter: blur(15px); transform: translateY(40px); transition: all 1s ease; }
 .reveal.show { opacity: 1; filter: blur(0); transform: translateY(0); }
 
-/* Animation Machine à écrire (Typewriter) */
+/* --- LE NOUVEAU TYPEWRITER (Machine à écrire infaillible) --- */
 .typewriter {
-    overflow: hidden;
-    white-space: nowrap;
-    border-right: 3px solid var(--icon-color);
-    margin: 0 auto;
-    width: 0;
-    animation: typing 2.5s steps(40, end) forwards, blink-caret .75s step-end infinite;
-}
-@keyframes typing {
-    from { width: 0; }
-    to { width: var(--chars, 100%); } /* Stop la largeur au nombre exact de caractères */
-}
-@keyframes blink-caret { 
-    from, to { border-color: transparent } 
-    50% { border-color: var(--icon-color); } 
+    position: relative;
+    display: block;
+    width: fit-content; /* Le conteneur prend EXCATEMENT la taille du texte */
 }
 
-/* Frise chronologique (Timeline pour Mon Avenir) */
-.timeline {
-    position: relative; max-width: 1000px; margin: 4rem auto; padding: 2rem 0;
+.typewriter::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--bg-main); /* Cache le texte avec la couleur de fond de la page */
+    border-left: 3px solid var(--icon-color); /* Fait office de curseur clignotant */
+    animation: typing-cover 2.5s steps(40, end) forwards, blink-caret-cover .75s step-end infinite;
+    z-index: 2;
 }
+
+@keyframes typing-cover {
+    from { left: 0; width: 100%; } /* Cache tout au début */
+    to { left: 100%; width: 0%; }  /* Dévoile tout le texte à la fin */
+}
+@keyframes blink-caret-cover { 
+    from, to { border-left-color: transparent } 
+    50% { border-left-color: var(--icon-color); } 
+}
+
+/* Frise chronologique */
+.timeline { position: relative; max-width: 1000px; margin: 4rem auto; padding: 2rem 0; }
 .timeline::after {
     content: ''; position: absolute; width: 4px; background-color: var(--accent);
     top: 0; bottom: 0; left: 50px; border-radius: 2px;
 }
 .timeline-item {
-    padding: 10px 40px 60px 100px; position: relative; width: 100%; margin-bottom: 3rem;
+    padding: 10px 40px 60px 100px; /* Espace augmenté entre les bulles */
+    position: relative; width: 100%; margin-bottom: 3rem;
 }
 .timeline-item::after {
-    content: ''; position: absolute; width: 20px; height: 20px;
-    right: auto; left: 42px; top: 15px;
+    content: ''; position: absolute; width: 20px; height: 20px; right: auto; left: 42px; top: 15px;
     background-color: var(--bg-main); border: 4px solid var(--icon-color);
     border-radius: 50%; z-index: 1; transition: 0.3s;
 }
 .timeline-item:hover::after { background-color: var(--icon-color); transform: scale(1.3); box-shadow: 0 0 15px var(--icon-color); }
 
-/* Modal (Agrandissement image) */
+/* Modal Image */
 #imageModal {
-    display: none; position: fixed; z-index: 2000; top: 0; left: 0;
-    width: 100%; height: 100%; background: rgba(22, 27, 51, 0.85); backdrop-filter: blur(10px);
+    display: none; position: fixed; z-index: 2000; top: 0; left: 0; width: 100%; height: 100%; 
+    background: rgba(22, 27, 51, 0.85); backdrop-filter: blur(10px);
     justify-content: center; align-items: center; cursor: pointer;
 }
 #modalImg { max-width: 90%; max-height: 90%; border-radius: 20px; }
 .close-modal { position: absolute; top: 30px; left: 40px; color: #FFFFFF; font-size: 50px; }
 
-/* Pied de page */
+/* Footer */
 footer {
-    text-align: center; padding: 2.5rem;
-    background-color: var(--hover-preview);
-    color: var(--text-main); font-weight: 600;
-    border-top: 1px solid rgba(204, 164, 105, 0.2);
+    text-align: center; padding: 2.5rem; background-color: var(--hover-preview);
+    color: var(--text-main); font-weight: 600; border-top: 1px solid rgba(204, 164, 105, 0.2);
 }
 
-/* Mode Mobile (Smartphones) */
+/* Mode Mobile */
 @media (max-width: 768px) {
     .container { padding: 3rem 5%; }
     .nav-links { display: none; }
-    /* Sur mobile, on annule l'effet d'écriture pour éviter les débordements d'écran */
-    .typewriter { white-space: normal; animation: none; border-right: none; width: auto !important; }
+    .typewriter::after { display: none; } /* Désactivé sur mobile pour éviter les bugs d'affichage */
     .photo-grid-2col { grid-template-columns: 1fr; }
-    /* Ajustement de la timeline pour petit écran */
     .timeline::after { left: 20px; }
     .timeline-item { padding: 10px 20px 40px 50px; margin-bottom: 2rem;}
     .timeline-item::after { left: 12px; }
