@@ -1,113 +1,90 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Fustat:wght@300;400;600;700&family=Montserrat:wght@300;400;600;700&display=swap');
 
 :root {
-    --bg-main: #DFF2F2;      /* Fond très clair */
+    --bg-main: #DFF2F2;      /* Fond clair */
     --text-main: #161B33;    /* Texte bleu nuit */
-    --accent: #9FC0E4;       /* Accent bleu ciel */
-    --icon-color: #F04E9D;   /* Touche de rose pour les icônes */
-    --card-bg: rgba(255, 255, 255, 0.6);
+    --accent: #6EC0E4;       /* Bleu ciel */
+    --highlight: #F04E9D;    /* Rose icônes */
+    --secondary: #F8F9FA;    /* Blanc cassé */
+    --glass: rgba(255, 255, 255, 0.4);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     background-color: var(--bg-main);
     color: var(--text-main);
-    line-height: 1.8;
+    line-height: 1.6;
     overflow-x: hidden;
 }
 
-/* Navigation */
+/* --- TYPOGRAPHIE --- */
+h1 { font-family: 'Fustat', sans-serif; font-size: clamp(32px, 5vw, 48px); font-weight: 700; line-height: 1.2; }
+h2 { font-family: 'Fustat', sans-serif; font-size: clamp(24px, 4vw, 36px); color: var(--text-main); margin-bottom: 1.5rem; }
+h3 { font-family: 'Fustat', sans-serif; font-size: clamp(20px, 3vw, 28px); margin-bottom: 0.5rem; }
+p { font-size: 17px; text-align: justify; margin-bottom: 1rem; }
+.text-secondary { font-size: 13px; color: #555; }
+
+/* --- NAVIGATION (Effet Apple/Blur) --- */
 nav {
-    background: rgba(223, 242, 242, 0.8); 
-    padding: 1.2rem 5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 2px solid var(--accent);
     position: sticky; top: 0; z-index: 1000;
-    backdrop-filter: blur(15px);
+    padding: 1rem 10%;
+    background: rgba(223, 242, 242, 0.7);
+    backdrop-filter: blur(20px);
+    display: flex; justify-content: space-between; align-items: center;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
 }
 
-.logo { 
-    font-size: 1.8rem; 
-    color: var(--text-main); 
-    text-decoration: none;
-    font-weight: 700;
-}
-.logo span { color: var(--accent); }
+.logo { font-weight: 700; font-size: 1.2rem; text-decoration: none; color: var(--text-main); transition: 0.3s; }
+.logo:hover { transform: scale(1.05); }
 
 .nav-links a {
-    color: var(--text-main);
-    text-decoration: none;
-    margin-left: 2rem;
-    font-weight: 600;
-    transition: 0.3s;
+    text-decoration: none; color: var(--text-main);
+    margin-left: 2rem; font-weight: 600; font-size: 15px;
+    transition: 0.3s; opacity: 0.7;
 }
-.nav-links a:hover, .nav-links a.active { color: var(--icon-color); }
+.nav-links a:hover, .nav-links a.active { opacity: 1; color: var(--highlight); }
 
-/* Contenu */
-.container { padding: 5rem 10%; }
-.title { 
-    font-size: 2.5rem; 
-    color: var(--text-main); 
-    margin-bottom: 2rem; 
-    border-left: 5px solid var(--icon-color); 
-    padding-left: 15px; 
+/* --- ELEMENTS GRAPHIQUES --- */
+.container { padding: 4rem 12%; max-width: 1400px; margin: auto; }
+
+.btn-pill {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 12px 24px; background: var(--secondary);
+    border-radius: 50px; text-decoration: none; color: var(--text-main);
+    font-weight: 600; border: 1px solid var(--accent);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-p { text-align: justify; margin-bottom: 1.5rem; }
+.btn-pill:hover { transform: scale(1.1); box-shadow: 0 10px 20px rgba(0,0,0,0.1); border-color: var(--highlight); }
 
-/* Boutons */
-.btn {
-    display: inline-flex; align-items: center; gap: 10px;
-    padding: 0.8rem 2rem;
-    background-color: var(--accent);
-    color: var(--text-main);
-    text-decoration: none;
-    border-radius: 30px;
-    font-weight: 700;
-    transition: 0.3s;
-    border: none;
-}
-.btn:hover { background-color: var(--text-main); color: #fff; transform: scale(1.05); }
-
-/* Cartes */
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
 .card {
-    background: var(--card-bg);
-    padding: 2.5rem;
-    border-radius: 15px;
-    border: 1px solid rgba(159, 192, 228, 0.4);
-    transition: 0.4s;
+    background: var(--glass); backdrop-filter: blur(10px);
+    border-radius: 24px; padding: 2.5rem;
+    border: 1px solid rgba(255,255,255,0.3);
+    transition: 0.5s ease; margin-bottom: 2rem;
 }
-.card:hover { transform: translateY(-10px); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-.card i { color: var(--icon-color); font-size: 1.5rem; }
+.card:hover { transform: translateY(-10px) scale(1.01); box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
 
-/* Animations Scroll */
-.reveal-blur { opacity: 0; filter: blur(10px); transform: translateY(30px); transition: 1s; }
-.show { opacity: 1; filter: blur(0); transform: translateY(0); }
+/* --- ANIMATIONS --- */
+.reveal { opacity: 0; filter: blur(15px); transform: translateY(40px); transition: all 1s ease-out; }
+.reveal.active { opacity: 1; filter: blur(0); transform: translateY(0); }
 
-/* Galerie et Modal (Agrandissement) */
-.photo-grid img {
-    width: 100%; height: 150px; object-fit: cover; border-radius: 10px;
-    cursor: pointer; transition: 0.3s;
+.typewriter-effect { overflow: hidden; border-right: 2px solid var(--highlight); white-space: nowrap; animation: typing 3s steps(40, end), blink 0.75s step-end infinite; }
+@keyframes typing { from { width: 0 } to { width: 100% } }
+@keyframes blink { from, to { border-color: transparent } 50% { border-color: var(--highlight) } }
+
+/* --- PASSIONS (Grille Photos) --- */
+.photo-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.photo-grid img { 
+    width: 100%; height: 250px; object-fit: cover; border-radius: 18px; 
+    cursor: pointer; transition: 0.4s; 
 }
-.photo-grid img:hover { transform: scale(1.03); }
+.photo-grid img:hover { transform: scale(1.03); filter: brightness(1.1); }
 
-/* MODAL STYLES */
-#imageModal {
-    display: none; position: fixed; z-index: 2000; top: 0; left: 0;
-    width: 100%; height: 100%; background: rgba(22, 27, 51, 0.9);
-    justify-content: center; align-items: center; cursor: pointer;
-}
-#modalImg { max-width: 90%; max-height: 80%; border-radius: 10px; border: 5px solid white; }
-.close-modal { position: absolute; top: 20px; right: 30px; color: white; font-size: 40px; font-weight: bold; }
+/* --- FOOTER (Crédit Centre) --- */
+footer { padding: 3rem; text-align: center; font-size: 14px; opacity: 0.6; }
 
-/* Parallax */
-.passion-section { position: relative; padding: 6rem 10%; display: flex; align-items: center; gap: 4rem; }
-.parallax-bg {
-    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-    background-attachment: fixed; background-size: cover; opacity: 0.15; z-index: -1;
-}
+/* Modal Image */
+#modal { display: none; position: fixed; inset: 0; background: rgba(22, 27, 51, 0.95); z-index: 2000; align-items: center; justify-content: center; cursor: zoom-out; }
+#modal img { max-width: 90%; max-height: 90%; border-radius: 12px; }

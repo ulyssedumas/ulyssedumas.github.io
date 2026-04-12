@@ -2,12 +2,10 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ulysse Dumas | Mon Parcours</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <nav>
         <a href="index.html" class="logo">Ulysse<span>Dumas</span></a>
         <div class="nav-links">
@@ -18,52 +16,33 @@
     </nav>
 
     <div class="container">
-        <h1 class="title reveal-blur">Parcours Académique & Professionnel</h1>
+        <h1 class="reveal">Parcours académique et professionnel</h1>
 
-        <h2 class="reveal-blur" style="color: var(--accent); margin: 3rem 0 1.5rem;"><i class="fa-solid fa-graduation-cap"></i> Formation Académique</h2>
+        <h2 class="reveal" style="margin-top: 4rem;"><i class="fas fa-graduation-cap" style="color:var(--highlight)"></i> Formation académique</h2>
         
-        <div class="card reveal-blur" style="margin-bottom: 2rem;">
-            <h3 style="color: var(--hover-preview);">2ème année du cycle généraliste | <a href="https://www.esiee.fr/" target="_blank" class="text-link">ESIEE Paris</a></h3>
-            <strong style="color: var(--icon-color);">Sept. 2025 - Juin 2026 (Paris, France)</strong>
-            <p style="margin-top: 1rem;">Enseignement intensif en sciences fondamentales, sciences de l'ingénieur, management, anglais et sciences humaines. Délégué de classe de la promotion et Responsable communication d'une association étudiante dynamique.</p>
+        <div class="card reveal">
+            <h3>Formation Ingénieur en santé numérique | <a href="https://www.esiee.fr/lecole/pourquoi-choisir-esiee-paris" target="_blank" style="color:var(--accent)">ESIEE Paris</a></h3>
+            <span class="text-secondary">Sept 2024 – Sept 2029</span>
+            <p style="margin-top:1rem;">Enseignement de sciences fondamentales, de sciences de l’ingénieur et management. L'objectif est de former des ingénieurs capables de collaborer efficacement et connectés aux réalités opérationnelles.</p>
         </div>
 
-        <div class="card reveal-blur" style="margin-bottom: 2rem;">
-            <h3 style="color: var(--hover-preview);">PASS (Parcours Accès Santé Spécifique) | Université de Médecine</h3>
-            <strong style="color: var(--icon-color);">Sept. 2023 - Juin 2024 (Montpellier, France)</strong>
-            <p style="margin-top: 1rem;">Préparation intensive au concours d'entrée aux études de médecine. Acquisition d'une forte rigueur de travail, d'une grande résistance au stress et de bases médicales solides.</p>
+        <div class="card reveal">
+            <h3>PASS (Parcours accès santé spécifique) | <a href="https://facmedecine.umontpellier.fr/" target="_blank" style="color:var(--accent)">Univ. Montpellier</a></h3>
+            <span class="text-secondary">Aout 2023 – Sept 2024</span>
+            <p style="margin-top:1rem;">Huit siècles d'histoire médicale. Formation intensive développant rigueur scientifique, persévérance et méthodologie de travail précieuse pour l'ingénierie.</p>
         </div>
 
-        <h2 class="reveal-blur" style="color: var(--accent); margin: 4rem 0 1.5rem;"><i class="fa-solid fa-briefcase"></i> Expériences Professionnelles</h2>
-        
-        <div class="grid">
-            <div class="card hidden-left">
-                <h3><i class="fa-solid fa-heart-pulse"></i> Tachycard</h3>
-                <strong style="color: var(--hover-preview);">Juillet - Août 2025 (Montpellier)</strong>
-                <p style="margin-top: 10px;">Développement d'une solution SaaS innovante appliquée à la cardiologie. Démarchage direct de centres hospitaliers, création de tutoriels pour les soignants et collaboration sur l'interface utilisateur.</p>
-            </div>
-            
-            <div class="card reveal-blur">
-                <h3><i class="fa-solid fa-landmark"></i> Cabinet Ministériel</h3>
-                <strong style="color: var(--hover-preview);">Juillet - Décembre 2021</strong>
-                <p style="margin-top: 10px;">Stagiaire auprès de Mme Mirallès Patricia (Députée & Ministre). Assistance à l'organisation de cérémonies officielles. Observation des enjeux de prévention, rédaction de synthèses et adaptabilité en haute direction.</p>
-            </div>
+        <h2 class="reveal" style="margin-top: 4rem;"><i class="fas fa-briefcase" style="color:var(--highlight)"></i> Expérience professionnelle</h2>
 
-            <div class="card hidden-right">
-                <h3><i class="fa-solid fa-bone"></i> Cabinet de Chiropraxie</h3>
-                <strong style="color: var(--hover-preview);">2021</strong>
-                <p style="margin-top: 10px;">Observation auprès de Mr Magri Philippe. Étude de l'approche biomécanique du corps humain, compréhension des troubles musculo-squelettiques et analyse de la relation fondamentale entre praticien et patient.</p>
-            </div>
+        <div class="card reveal">
+            <h3>Stagiaire en ingénierie et commerce | TachyCard</h3>
+            <span class="text-secondary">Juil 2025 – Aout 2025</span>
+            <p style="margin-top:1rem;">Traduction des besoins cliniques en fonctionnalités SaaS pour le suivi de dispositifs cardiaques. Fusion entre rigueur médicale et réactivité startup.</p>
         </div>
-    </div>
 
-    <footer><p>&copy; 2026 Ulysse Dumas</p></footer>
+        </div>
 
-    <script>
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => { if (entry.isIntersecting) entry.target.classList.add('show'); });
-        });
-        document.querySelectorAll('.reveal-blur, .hidden-left, .hidden-right').forEach((el) => observer.observe(el));
-    </script>
+    <footer>© 2026 Ulysse Dumas - ESIEE Paris</footer>
+    <script src="script.js"></script>
 </body>
 </html>
