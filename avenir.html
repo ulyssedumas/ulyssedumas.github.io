@@ -130,17 +130,21 @@
             if (entry.isIntersecting) {
                 entry.target.classList.add('show'); 
                 
-                // NOUVEAU : Effet machine à écrire
+                // NOUVEAU : Effet machine à écrire gérant les retours à la ligne
                 if (entry.target.classList.contains('typewriter') && !entry.target.dataset.typed) {
-                    entry.target.dataset.typed = "true"; // Évite de retaper le texte en boucle
+                    entry.target.dataset.typed = "true";
                     const text = entry.target.getAttribute('data-text');
-                    entry.target.innerHTML = ''; // On vide le texte
+                    
+                    // On prépare le terrain : une zone pour le texte + le curseur à la fin
+                    entry.target.innerHTML = '<span class="typed-text"></span><span class="typewriter-cursor">|</span>';
+                    const textContainer = entry.target.querySelector('.typed-text');
+                    
                     let i = 0;
                     function type() {
                         if (i < text.length) {
-                            entry.target.innerHTML += text.charAt(i);
+                            textContainer.innerHTML += text.charAt(i);
                             i++;
-                            setTimeout(type, 40); // Vitesse : 40 millisecondes par lettre
+                            setTimeout(type, 40); // 40ms par lettre
                         }
                     }
                     setTimeout(type, 300); // Petit délai avant de commencer

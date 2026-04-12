@@ -97,17 +97,23 @@ nav {
 
 /* --- LE NOUVEAU TYPEWRITER (Machine à écrire infaillible) --- */
 .typewriter {
-    width: fit-content; /* La taille s'adapte exactement au mot */
-    margin: 0 auto; /* Centre le titre */
-    border-right: 3px solid var(--icon-color); /* Le curseur clignotant */
-    padding-right: 5px;
-    animation: blink-caret .75s step-end infinite;
-    white-space: pre-wrap; /* Gère les retours à la ligne proprement sur mobile */
+    margin: 0 auto;
+    /* On enlève width: fit-content et border-right qui posaient problème sur plusieurs lignes */
+    white-space: pre-wrap; 
 }
 
-@keyframes blink-caret { 
-    from, to { border-color: transparent } 
-    50% { border-color: var(--icon-color); } 
+/* Le nouveau curseur intégré au texte */
+.typewriter-cursor {
+    color: var(--icon-color);
+    font-weight: 400; /* Ajuste si tu veux une barre plus ou moins épaisse */
+    animation: blink 0.8s step-end infinite;
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+@keyframes blink {
+    from, to { opacity: 1; }
+    50% { opacity: 0; }
 }
 
 /* Frise chronologique */
