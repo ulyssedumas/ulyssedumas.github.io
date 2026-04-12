@@ -193,11 +193,33 @@ footer {
     
     /* On place le bouton lune/soleil en haut à droite */
     .theme-switch {
-        position: absolute;
-        top: 10px;
+        position: fixed; 
+        top: 15px;
         right: 5%;
-        z-index: 50; /* S'assure que le bouton passe au-dessus de tout le reste */
-        margin: 0; /* Retire les marges potentielles */
+        z-index: 9999; 
+        
+        /* On lui donne un fond et on annule les bugs de Safari mobile */
+        background-color: var(--bg-main) !important; 
+        -webkit-appearance: none; /* Empêche l'iPhone de cacher le bouton */
+        
+        width: 45px; /* Un peu plus grand pour les gros doigts */
+        height: 45px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        border: 2px solid var(--accent);
+        
+        /* On force la couleur du texte/icône au cas où */
+        color: var(--icon-color) !important; 
+    }
+
+    /* On s'assure que la lune/soleil est bien de la bonne couleur et taille */
+    .theme-switch i {
+        font-size: 20px;
+        color: var(--icon-color) !important; 
+        display: block; /* S'assure que l'icône occupe son espace */
     }
     
     /* On affiche les liens et on permet le défilement horizontal au doigt */
