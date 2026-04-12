@@ -7,8 +7,8 @@
     --bg-main: #F7FAFC;       /* Gris très léger, reposant */
     --text-main: #0F172A;     /* Bleu très foncé, lisible */
     --accent: #2563EB;        /* Bleu médical moderne (branding/bordures) */
-    --icon-color: #F59E0B;    /* Orange ambré (icônes/punch) */
-    --hover-preview: #14B8A6; /* Turquoise (survol, menus, liens actifs) */
+    --icon-color: #f5740b;    /* Orange ambré (icônes/punch) */
+    --hover-preview: #14adb8; /* Turquoise (survol, menus, liens actifs) */
     
     --transition-speed: 0.4s; /* Vitesse de transition fluide */
 }
@@ -17,9 +17,9 @@
     /* MODE SOMBRE */
     --bg-main: #0F172A;       /* Bleu nuit, moins agressif que noir pur */
     --text-main: #E2E8F0;     /* Gris clair doux pour les yeux */
-    --accent: #60A5FA;        /* Bleu plus lumineux */
-    --icon-color: #FBBF24;    /* Jaune/Orange lumineux */
-    --hover-preview: #14B8A6; /* Turquoise clair */
+    --accent: #2563EB;        /* Bleu plus lumineux */
+    --icon-color: #f5740b;    /* Jaune/Orange lumineux */
+    --hover-preview: #14adb8; /* Turquoise clair */
 }
 
 /* Application des couleurs globales avec transition douce */
